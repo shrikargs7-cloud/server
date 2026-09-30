@@ -368,7 +368,7 @@ describe('Setup page with autoconfig', () => {
 
 		// Database and storage section is hidden as already set in autoconfig
 		await expect(component.findByText('Storage & database')).resolves.not.toThrow()
-		expect(component.getByText('Storage & database').closest('details')!.getAttribute('hidden')).toBeNull()
+		expect(component.getByText('Storage & database').closest('details')!.style.display).toBe('none')
 	})
 })
 
