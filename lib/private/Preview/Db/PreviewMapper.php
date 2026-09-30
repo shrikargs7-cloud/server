@@ -60,6 +60,8 @@ class PreviewMapper extends QBMapper {
 		/** @var Preview $preview */
 		$preview = $entity;
 
+		// The version row reuses the preview id, so it has to exist before it is written.
+		$preview->generateId();
 		$preview->setMimetypeId($this->mimeTypeLoader->getId($preview->getMimeType()));
 		$preview->setSourceMimetypeId($this->mimeTypeLoader->getId($preview->getSourceMimeType()));
 
